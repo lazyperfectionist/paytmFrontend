@@ -13,7 +13,7 @@ function TransferMoney({ onTransactionComplete }) {
         setError(null);
         setSuccess(null);
         try {
-            await axios.post('paytmbackend.shivanshdwivedi.in:3000/api/v1/account/transfer', {
+            await axios.post('http://paytmbackend.shivanshdwivedi.in:3000/api/v1/account/transfer', {
                 recipient,
                 amount
             }, {

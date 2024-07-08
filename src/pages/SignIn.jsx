@@ -8,7 +8,7 @@ function SignIn() {
     const navigate = useNavigate();
     async function OnSubmit(e) {
         e.preventDefault();
-        const response = await axios.post("paytmbackend.shivanshdwivedi.in:3000/api/v1/user/signin", {
+        const response = await axios.post("http://paytmbackend.shivanshdwivedi.in:3000/api/v1/user/signin", {
             username, password
         })
         if (response.data.token) {

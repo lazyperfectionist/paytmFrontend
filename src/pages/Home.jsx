@@ -10,7 +10,7 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const handleSendMoney = async (user) => {
         console.log(`Send money to user with ID: ${user}`);
-        const response = await axios.post('paytmbackend.shivanshdwivedi.in:3000/api/v1/account/transfer', {
+        const response = await axios.post('http://paytmbackend.shivanshdwivedi.in:3000/api/v1/account/transfer', {
             to: user,
             amount: 100
         }, {
@@ -21,7 +21,7 @@ const Home = () => {
         setTCount(tCount+1);
     };
     async function fetchBalance() {
-        const response = await axios.get('paytmbackend.shivanshdwivedi.in:3000/api/v1/account/balance', {
+        const response = await axios.get('http://paytmbackend.shivanshdwivedi.in:3000/api/v1/account/balance', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -37,7 +37,7 @@ const Home = () => {
         navigate('/signin')
     };
     async function fetchAllUsers() {
-        const users = await axios.get('paytmbackend.shivanshdwivedi.in:3000/api/v1/user/bulk', {
+        const users = await axios.get('http://paytmbackend.shivanshdwivedi.in:3000/api/v1/user/bulk', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }

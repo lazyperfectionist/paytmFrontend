@@ -36,7 +36,7 @@ function SignUp() {
                     
                                 <button type="submit" onClick={async(e)=>{
                                     e.preventDefault();
-                                    const response = await axios.post("paytmbackend.shivanshdwivedi.in:3000/api/v1/user/signup", {
+                                    const response = await axios.post("http://paytmbackend.shivanshdwivedi.in:3000/api/v1/user/signup", {
                                         username, password, firstName, lastName
                                     })
                                     console.log(response.data);
